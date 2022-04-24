@@ -1,0 +1,54 @@
+{% extends 'main/base.html' %}
+
+{% load static %}
+
+{% block title %} Главная {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+  <div class="jumbotron">
+    <h1>Сервисы нашего банка</h1>
+  </div>
+  <div id="demo" class="carousel slide" data-ride="carousel">
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+      <li data-target="#demo" data-slide-to="1"></li>
+      <li data-target="#demo" data-slide-to="2"></li>
+    </ul>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{% static 'main/img/mobile.jpg' %}" alt="Los Angeles" width="1100" height="500">
+        <div class="carousel-caption">
+          <h3>QazMobile</h3>
+          <p>Цифровой мобильный оператор!</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'main/img/travel.jpg' %}" alt="Chicago" width="1100" height="500">
+        <div class="carousel-caption">
+          <h3>QazTravel</h3>
+          <p>Покупайте авиабилеты и ЖД билеты</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{% static 'main/img/market.jpg' %}" alt="New York" width="1100" height="500">
+        <div class="carousel-caption">
+          <h3>QazMarket</h3>
+          <p>Магазин – сервис, благодаря которому, вы имеете возможность выбрать и приобрести интересующий Вас товар по лучшим ценам!</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+  <div class="jumbotron">
+    <div class="col-xl-8">
+      <p>Банковские операции делятся на пассивные и активные. Пассивными называются операции, посредством которых банки образуют ресурсы денежного капитала, активными — операции, посредством которых они используют эти ресурсы с целью извлечения прибыли.</p>
+    </div>
+  </div>
+  {% include 'main/nav_bar_down.html' %}
+{% endblock %}

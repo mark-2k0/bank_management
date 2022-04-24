@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Account Page {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+  <div class="row">
+  <div class="col-sm-6">
+    <table class="table table-dark">
+      <tr>
+        <td>Имя</td>
+        <td>{{ account.first_name }}</td>
+      </tr>
+      <tr>
+        <td>Фамилия</td>
+        <td>{{ account.last_name }}</td>
+      </tr>
+      <tr>
+        <td>Дата</td>
+        <td>{{ account.release_date }}</td>
+      </tr>
+      <tr>
+        <td>Сумма</td>
+        <td>{{ account.summa }} {{ account.currency.name }}</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+  {% include 'main/nav_bar_down.html' %}
+{% endblock %}

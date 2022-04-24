@@ -1,0 +1,27 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Account create {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+  <div class="row">
+  <div class="col-sm-12">
+    <form class="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input type="text" name="first_name" placeholder="Имя">
+      <input type="text" name="last_name" placeholder="Фамилия">
+      <input type="text" name="release_date" placeholder="Дата: YYYY-MM-dd">
+      <input type="" name="summa" placeholder="Сумма">
+      <select class="" name="currency">
+        {% for o in options %}
+        <option value="{{ o.id }}">{{ o.name }}</option>
+        {% endfor %}
+      </select>
+      <input type="submit" name="submit" value="Add new Account">
+    </form>
+
+  </div>
+
+</div>
+  {% include 'main/nav_bar_down.html' %}
+{% endblock %}

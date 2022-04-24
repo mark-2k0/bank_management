@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Мой кабинет {% endblock %}
+
+{% block body %}
+  {% include 'main/navigation_bar.html' %}
+
+  <div class="row">
+    <div class="col-sm-12">
+      {% if accounts %}
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <td>Имя</td>
+            <td>Фамилия</td>
+            <td>Дата</td>
+            <td>Сумма</td>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in accounts %}
+          <tr>
+            <td><a href="{% url 'main:account_detail_page' p.id %}">{{ p.first_name }}</a></td>
+            <td>{{ p.last_name }}</td>
+            <td>{{ p.release_date }}</td>
+            <td>{{ p.summa }} {{ p.currency.name }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      {% else %}
+        <p>Пока что у вас нет счетов</p>
+      {% endif %}
+    </div>
+    <a href="{% url 'main:account_create_page' %}">Create account</a>
+  </div>
+
+  {% include 'main/nav_bar_down.html' %}
+{% endblock %}
